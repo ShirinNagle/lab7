@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 //import logo from './logo.svg';
 
 
@@ -26,8 +27,23 @@ class Create extends React.Component{
   }
 
   handleSubmit(e) {
-    alert('A name was submitted: ' + this.state.Title +''+ 'Year:'+ this.state.Year + ''+'Poster:'+ this.state.Poster);
+    alert('Title'+this.state.Title +''+ 'Year:'+ this.state.Year + ''+'Poster:'+ this.state.Poster);
     e.preventDefault();
+    const newMovie = {
+
+      title: this.state.Title,
+      year: this.state.Year,
+      poster: this.state.Poster
+    }
+    axios.post('http://localhost:4000/api/movies', newMovie).then().catch();
+
+    this.setState({
+      Title: '',
+      Year: '',
+      Poster: ''
+    })
+
+
       }
 
   render(){
