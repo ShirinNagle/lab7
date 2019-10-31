@@ -27,7 +27,7 @@ class Create extends React.Component{
   }
 
   handleSubmit(e) {
-    alert('Title'+this.state.Title +''+ 'Year:'+ this.state.Year + ''+'Poster:'+ this.state.Poster);
+    alert('Title: '+this.state.Title +''+ 'Year: '+ this.state.Year + ''+'Poster: '+ this.state.Poster);
     e.preventDefault();
     const newMovie = {
 
