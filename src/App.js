@@ -9,6 +9,7 @@ import {Navbar, Nav} from 'react-bootstrap';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import Create from './Components/create';
 import Read from './Components/read';
+import Edit from './Components/edit';
 
 class App extends React.Component{
   render(){
@@ -27,7 +28,8 @@ class App extends React.Component{
     <Switch>
     <Route path='/' component={Content} exact />
     <Route exact path='/create' component={Create} />
-<Route path='/read' component={Read} />
+    <Route path='/read' component={Read} />
+    <Route path = '/edit/:id' component = {Edit}/>
 
 
     </Switch>
